@@ -181,7 +181,7 @@ export default function Home() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
-        <p className="font-mono text-xs uppercase tracking-[0.3em] text-gold mb-3">Altuni AI Labs · Analyst Desk</p>
+        <p className="font-mono text-xs uppercase tracking-[0.3em] text-gold mb-3">InvestX AI Labs · Analyst Desk</p>
         <h1 className="font-display text-4xl sm:text-5xl leading-[1.05] mb-3">
           Give it a name.
           <br />
