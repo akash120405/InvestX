@@ -257,7 +257,7 @@ export default function Home() {
       </AnimatePresence>
 
       <footer className="relative mt-16 pt-6 border-t border-ink-line font-mono text-xs text-slate/60">
-        Built with Next.js · LangGraph.js · Claude — orchestrated as a six-node research pipeline.
+        Built by Akash Venkatesan | InvestX is a personal project and portfolio piece, not financial advice. Use at your own risk| 2026
       </footer>
 
       <HistoryDrawer
