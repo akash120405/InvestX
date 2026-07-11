@@ -4,9 +4,9 @@ import { AnimatePresence, motion } from "framer-motion";
 
 const LINKS = [
   { label: "Email", value: "akashvenkatesan112@gmail.com", href: "mailto:akashvenkatesan112@gmail.com" },
-  { label: "LinkedIn", value: "linkedin.com/in/akashvenkatesan12", href: "https://linkedin.com/in/akashvenkatesan12" },
-  { label: "GitHub", value: "github.com/akash120405", href: "https://github.com/akash120405" },
-  { label: "Portfolio", value: "akash120405.github.io/portfolio", href: "https://akash120405.github.io/portfolio/" },
+  { label: "LinkedIn", value: "linkedin.com/akash", href: "https://linkedin.com/in/akashvenkatesan12" },
+  { label: "GitHub", value: "github.com/akash", href: "https://github.com/akash120405" },
+  { label: "Portfolio", value: "portfolio/akash", href: "https://akash120405.github.io/portfolio/" },
 ];
 
 export default function ContactSection({ open }: { open: boolean }) {
