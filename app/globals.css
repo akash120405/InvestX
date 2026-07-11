@@ -1,0 +1,142 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* System-first font stacks — no external network fetch required, so the
+     build never breaks due to a blocked/offline connection to Google Fonts.
+     Chosen to echo the original Fraunces / IBM Plex Sans / IBM Plex Mono
+     pairing as closely as widely-installed system fonts allow. */
+  --font-fraunces: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+  --font-plex-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-plex-mono: ui-monospace, "SF Mono", "Cascadia Mono", "JetBrains Mono", Consolas, "Courier New", monospace;
+}
+
+:root,
+[data-theme="night-route"] {
+  /* "Night-Route" palette — the original warm, dark analyst-desk theme. */
+  --color-ink: #0b1220;
+  --color-ink-panel: #111a2c;
+  --color-ink-line: #22304a;
+  --color-paper: #f7f5ef;
+  --color-paper-dim: #eae6da;
+  --color-signal: #2fa84f;
+  --color-signal-dim: #1f7a3a;
+  --color-rust: #c1443b;
+  --color-rust-dim: #8e2f29;
+  --color-gold: #c9a227;
+  --color-slate: #8b93a6;
+}
+
+[data-theme="mono"] {
+  /* True black & white mode — high contrast, no color at all, for readers
+     who find the warm palette harder to scan or simply prefer a starker
+     look. Everything maps to grayscale; "gold" accents become pure white
+     so focus states / highlights stay visible without introducing hue. */
+  --color-ink: #000000;
+  --color-ink-panel: #141414;
+  --color-ink-line: #3a3a3a;
+  --color-paper: #ffffff;
+  --color-paper-dim: #e5e5e5;
+  --color-signal: #ffffff;
+  --color-signal-dim: #cccccc;
+  --color-rust: #ffffff;
+  --color-rust-dim: #999999;
+  --color-gold: #ffffff;
+  --color-slate: #a3a3a3;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0b1220;
+  background-image:
+    radial-gradient(ellipse 80% 60% at 50% -10%, rgba(201, 162, 39, 0.08), transparent),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+}
+
+::selection {
+  background: #c9a227;
+  color: #0b1220;
+}
+
+/* Visible keyboard focus everywhere — accessibility floor */
+:focus-visible {
+  outline: 2px solid #c9a227;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+.ledger-line {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent 27px,
+    #22304a 28px
+  );
+}
+
+.stamp-invest {
+  color: #2fa84f;
+  border-color: #2fa84f;
+}
+.stamp-pass {
+  color: #c1443b;
+  border-color: #c1443b;
+}
+.stamp-watch {
+  color: #c9a227;
+  border-color: #c9a227;
+}
+
+/* Subtle animated gradient sweep used behind the hero heading — gives the
+   landing view a bit of life without pulling in a new dependency. */
+.gradient-sheen {
+  background: linear-gradient(100deg, #c9a227 0%, #f7f5ef 35%, #c9a227 70%, #f7f5ef 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: sheen 6s ease-in-out infinite;
+}
+
+@keyframes sheen {
+  0% { background-position: 0% center; }
+  50% { background-position: 100% center; }
+  100% { background-position: 0% center; }
+}
+
+/* Thin animated progress rail shown while the agent trace is running. */
+.trace-progress {
+  position: relative;
+  overflow: hidden;
+}
+.trace-progress::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(201, 162, 39, 0.5), transparent);
+  transform: translateX(-100%);
+  animation: sweep 1.6s ease-in-out infinite;
+}
+@keyframes sweep {
+  100% { transform: translateX(100%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gradient-sheen,
+  .trace-progress::after {
+    animation: none;
+  }
+}
