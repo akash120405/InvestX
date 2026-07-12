@@ -1,4 +1,4 @@
-# Ledger — AI Investment Research Agent
+# InvestX — AI Investment Research Agent | Deployment Link - invest-x-ailabs.vercel.app/
 
 A six-node LangGraph.js pipeline that takes a company name, researches it (live news +
 financial fundamentals), weighs sentiment and risk, and returns a structured
@@ -329,11 +329,11 @@ lib/
 types/index.ts               — frontend-side mirror of the schema types
 ```
 
----
+---      
 
 ## A note on AI usage in building this
 
-This project was built with Claude as a pair-programming collaborator, as the assignment
+This project was built with Claude, Chatgpt, Kimi, Gemini as a pair-programming collaborator, as the assignment
 mandates. The chat session used to architect and write this code is included/available as
 required for bonus points — it captures the actual back-and-forth: why LangGraph over a
 plain chain, why a fan-out/fan-in shape for the two independent data pulls, why
