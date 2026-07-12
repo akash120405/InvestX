@@ -92,7 +92,7 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000), type a company name, hit **Open File**.
 
-### 4. Deploy (optional, for bonus points)
+### 4. Deploy 
 
 ```bash
 npm i -g vercel
