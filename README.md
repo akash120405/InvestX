@@ -1,4 +1,4 @@
-# InvestX — AI Investment Research Agent | Deployment Link - invest-x-ailabs.vercel.app/
+# InvestX — AI Investment Research Agent | Deployment Link - [invest-x-ailabs.vercel.app/](https://invest-x-ailabs.vercel.app/)
 
 A six-node LangGraph.js pipeline that takes a company name, researches it (live news +
 financial fundamentals), weighs sentiment and risk, and returns a structured
